@@ -22,11 +22,11 @@
   margin-left: auto;
   margin-right: auto;
   padding: 5px; }
-  #slides-controls a:hover {
-    background: #F30; }
-  #slides-controls a .highlight {
+  #slides-controls a.highlight {
     background: #fff;
     border: 1px solid #F30; }
+  #slides-controls a:hover {
+    background: #F30; }
 
 #slidecontrols a {
   margin: 5px;

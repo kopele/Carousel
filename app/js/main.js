@@ -1,11 +1,9 @@
-(function () {
+
     if (window.addEventListener) {
         window.addEventListener('load', setUpSlideShow, false);
     } else if (window.attachEvent) {
         window.attachEvent('onload', setUpSlideShow);
-    }
-})();
-
+    };
 
 var slidePrefix = "slide-",
     slideControlPrefix = "slide-control-",
@@ -24,7 +22,7 @@ function setUpSlideShow() {
     for (var i = 0; i < slidesCollection.length; i++) {
         slidesCollection[i].id = slidePrefix + (i + 1);
         slidesControllersCollection[i].id = slideControlPrefix + (i + 1);
-        slidesControllersCollection[i].onclick = function () { clickSlide(this); };
+        slidesControllersCollection[i].onclick = function () { clickSlide(this);};
         if (i > 0) {
             slidesCollection[i].style.display = "none";
         } else {
@@ -54,6 +52,7 @@ function showSlide(slideNo, immediate) {
 }
 
 function clickSlide(control) {
+    var test = control.id.substr(control.id.lastIndexOf("-") + 1); debugger;
     showSlide(Number(control.id.substr(control.id.lastIndexOf("-") + 1)), true);
 }
 

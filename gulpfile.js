@@ -54,7 +54,7 @@ gulp.task('build', ['clean', 'img', 'css-min', 'scripts'], function () {
   var buildJs = gulp.src('app/js/**/*')
     .pipe(gulp.dest('dist/js'));
 
-  var buildHtml = gulp.src('*.html')
+  var buildHtml = gulp.src('app/*.html')
     .pipe(gulp.dest('dist'));
 });
 
@@ -79,5 +79,5 @@ gulp.task('img', function(){
 
 gulp.task('default', ['browser-sync', 'css-min', 'scripts'], function () {
   gulp.watch('app/sass/*.sass', ['sass']);
-  gulp.watch(['*.html', 'app/sass/*.sass'], reload);
+  gulp.watch(['app/*.html', 'app/js/*.js', 'app/sass/*.sass'], reload);
 });
